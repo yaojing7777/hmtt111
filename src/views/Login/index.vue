@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-nav-bar title="登录">
+    <van-nav-bar title="登录" @click-left="$router.back()">
         <van-icon name="cross" slot="left"/>
     </van-nav-bar>
 
@@ -27,6 +27,7 @@
     ]"
   >
     <i class="toutiao toutiao-yanzhengma" slot="left-icon"></i>
+    <!-- <MyIcon :name='yanzhengma'></MyIcon> -->
     <template #button>
       <van-count-down v-if="isShow" :time='time' format="ss s"
       @finish="isShow = false"/>
@@ -60,6 +61,7 @@ export default {
         console.log(res)
         // token有效期2小时， 两种思路
         this.$store.commit('setUser', res.data.data)
+        this.$router.push({ name: 'my' })
       } catch (err) {
         console.log(err)
       }
