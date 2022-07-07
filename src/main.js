@@ -9,6 +9,8 @@ import 'amfe-flexible'
 import MyIcon from '@/components/MyIcon'
 // import '@/styles/reset.less'
 import '@/styles/index.less'
+import FollowUser from '@/components/FollowUser.vue'
+import '@/components'
 
 // 一次性把它所有的按需导出全部导出来
 import * as obj from '@/filters'
@@ -17,6 +19,7 @@ Object.keys(obj).forEach(key => {
 })
 
 Vue.component('MyIcon', MyIcon)
+Vue.component(FollowUser.name, FollowUser)
 
 Vue.config.productionTip = false
 
